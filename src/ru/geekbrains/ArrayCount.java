@@ -53,12 +53,13 @@ public class ArrayCount
         long a = System.currentTimeMillis();
 
         HashMap<Integer, float[]> mass = new HashMap<>();
-
+        int srcPos = 0;
         for(int i = 0; i < quant; i++)
         {
             float[] ar = new float[h];
-            System.arraycopy(arr, 0, ar, 0, h);
+            System.arraycopy(arr, srcPos, ar, 0, h);
             mass.put(i, ar);
+            srcPos = srcPos + h;
         }
 
         //  если при разбивке массива остаётся остаток.
